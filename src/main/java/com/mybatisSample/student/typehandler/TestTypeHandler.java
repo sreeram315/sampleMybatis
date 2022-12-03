@@ -16,7 +16,7 @@ public class TestTypeHandler extends BaseTypeHandler<Integer> {
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, Integer parameter, JdbcType jdbcType) throws SQLException {
         LOG.info("setNonNullParameter");
-        ps.setObject(i, 1);
+        ps.setObject(i, parameter);
     }
 
     @Override
