@@ -1,14 +1,13 @@
 package com.mybatisSample.student.dao;
 
+import com.mybatisSample.student.exceptions.StudentNotFoundException;
 import com.mybatisSample.student.models.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 public class StudentDaoTest {
@@ -29,8 +28,9 @@ public class StudentDaoTest {
         Student student = Student.with(id, name);
         studentDao.delete(id);
         studentDao.insert(student);
-        Optional<Student> studentOptional = studentDao.getStudent(student.getId());
-        assertTrue(studentOptional.isPresent());
+        student = studentDao.getStudent(student.getId());
+        assertEquals(student.getId(), id);
+        assertEquals(student.getName(), name);
     }
 
     /**
@@ -59,7 +59,6 @@ public class StudentDaoTest {
         // delete
         studentDao.delete(id);
         // assert deleted
-        Optional<Student> studentOptional = studentDao.getStudent(id);
-        assertTrue(studentOptional.isEmpty());
+        assertThrows(StudentNotFoundException.class, () -> studentDao.getStudent(id));
     }
 }

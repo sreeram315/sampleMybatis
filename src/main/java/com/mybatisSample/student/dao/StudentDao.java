@@ -6,26 +6,23 @@ import com.mybatisSample.student.models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Component
 public class StudentDao {
 
     @Autowired
     StudentMapper studentMapper;
 
-    public Optional<Student> getStudent(int id) {
+    public Student getStudent(int id) {
         Student student = studentMapper.getStudent(id);
-        return Optional.ofNullable(student);
+        if(student == null) {
+            throw new StudentNotFoundException(id);
+        }
+        return student;
     }
 
     public Student insert(int id, String name) {
         studentMapper.insertStudent(id, name);
-        Optional<Student> student = this.getStudent(id);
-        if(student.isEmpty()) {
-            throw new StudentNotFoundException(id);
-        }
-        return student.get();
+        return this.getStudent(id);
     }
 
     public void insert(Student student) {
