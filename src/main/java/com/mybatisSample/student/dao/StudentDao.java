@@ -1,8 +1,7 @@
-package com.typehandler.student.dao;
+package com.mybatisSample.student.dao;
 
-import com.typehandler.student.mapper.StudentMapper;
-import com.typehandler.student.models.Student;
-import org.apache.ibatis.session.SqlSession;
+import com.mybatisSample.student.mapper.StudentMapper;
+import com.mybatisSample.student.models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.typehandler.student.typehandler;
+package com.mybatisSample.student.typehandler;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

@@ -1,9 +1,8 @@
-package com.typehandler.utils;
+package com.mybatisSample.utils;
 
-import com.typehandler.student.dao.StudentDao;
-import com.typehandler.student.models.Student;
+import com.mybatisSample.student.dao.StudentDao;
+import com.mybatisSample.student.models.Student;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PopulateData {

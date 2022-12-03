@@ -1,7 +1,7 @@
-package com.typehandler.student.service;
+package com.mybatisSample.student.service;
 
-import com.typehandler.student.dao.StudentDao;
-import com.typehandler.student.models.Student;
+import com.mybatisSample.student.dao.StudentDao;
+import com.mybatisSample.student.models.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.typehandler.student.models;
+package com.mybatisSample.student.models;
 
 import java.util.Objects;
 

@@ -1,6 +1,6 @@
-package com.typehandler.student.mapper;
+package com.mybatisSample.student.mapper;
 
-import com.typehandler.student.models.Student;
+import com.mybatisSample.student.models.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
