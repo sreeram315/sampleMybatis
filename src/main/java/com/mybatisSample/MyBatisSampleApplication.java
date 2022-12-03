@@ -10,6 +10,4 @@ public class MyBatisSampleApplication {
 		SpringApplication.run(MyBatisSampleApplication.class, args);
 	}
 
-
-
 }

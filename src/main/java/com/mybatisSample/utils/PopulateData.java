@@ -5,6 +5,7 @@ import com.mybatisSample.student.models.Student;
 
 import java.util.List;
 
+// unused for now.
 public class PopulateData {
     public static void init(StudentDao studentDao) {
         List<Student> students = List.of(

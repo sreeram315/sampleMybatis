@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@SuppressWarnings("unused")
 public class TestTypeHandler extends BaseTypeHandler<Integer> {
     private final Logger LOG = LoggerFactory.getLogger(TestTypeHandler.class);
 
@@ -21,19 +22,16 @@ public class TestTypeHandler extends BaseTypeHandler<Integer> {
 
     @Override
     public Integer getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        LOG.info("getNullableResult");
-        return 1;
+        return rs.getObject(columnName, Integer.class);
     }
 
     @Override
     public Integer getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        LOG.info("getNullableResult");
-        return 1;
+        return rs.getObject(columnIndex, Integer.class);
     }
 
     @Override
     public Integer getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        LOG.info("getNullableResult");
-        return 1;
+        return cs.getObject(columnIndex, Integer.class);
     }
 }
