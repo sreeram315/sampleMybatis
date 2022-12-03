@@ -15,7 +15,7 @@ public class StudentDao {
     public Student getStudent(int id) {
         Student student = studentMapper.getStudent(id);
         if(student == null) {
-            throw new StudentNotFoundException(id);
+            throw StudentNotFoundException.with(id);
         }
         return student;
     }

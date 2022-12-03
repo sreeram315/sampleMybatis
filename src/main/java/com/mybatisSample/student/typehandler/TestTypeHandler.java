@@ -15,7 +15,8 @@ public class TestTypeHandler extends BaseTypeHandler<Integer> {
     private final Logger LOG = LoggerFactory.getLogger(TestTypeHandler.class);
 
     @Override
-    public void setNonNullParameter(PreparedStatement ps, int i, Integer parameter, JdbcType jdbcType) throws SQLException {
+    public void setNonNullParameter(PreparedStatement ps, int i, Integer parameter, JdbcType jdbcType)
+            throws SQLException {
         LOG.info("setNonNullParameter");
         ps.setObject(i, parameter);
     }
